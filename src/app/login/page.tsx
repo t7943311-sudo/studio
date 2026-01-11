@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Logo } from "@/components/logo"
+import { GoogleIcon } from "@/components/icons/google"
 
 export default function LoginPage() {
   return (
@@ -50,6 +51,10 @@ export default function LoginPage() {
             </div>
             <Button type="submit" className="w-full">
               Login
+            </Button>
+             <Button variant="outline" className="w-full">
+              <GoogleIcon className="mr-2 h-4 w-4" />
+              Login with Google
             </Button>
           </div>
           <div className="mt-4 text-center text-sm">
