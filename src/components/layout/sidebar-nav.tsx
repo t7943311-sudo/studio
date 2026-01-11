@@ -85,7 +85,7 @@ const NavLink = ({ item, onLinkClick, isSubItem = false }: { item: NavItem, onLi
     );
 
     const linkClasses = cn(
-        'flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary',
+        'flex items-center gap-3 rounded-lg px-3 py-2 text-foreground transition-all hover:text-primary',
         pathname === item.href ? 'bg-primary/10 text-primary' : '',
         isCollapsed && 'justify-center'
     );
@@ -140,7 +140,7 @@ export function SidebarNav({ onLinkClick }: { onLinkClick?: () => void }) {
             {pagesNavItems.map((item) => 
                 item.subItems ? (
                      <AccordionItem value={item.label} key={item.label} className="border-none">
-                        <AccordionTrigger className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:no-underline [&[data-state=open]>svg]:rotate-90">
+                        <AccordionTrigger className="flex items-center gap-3 rounded-lg px-3 py-2 text-foreground transition-all hover:text-primary hover:no-underline [&[data-state=open]>svg]:rotate-90">
                            <item.icon className="h-4 w-4" />
                            {item.label}
                         </AccordionTrigger>
@@ -172,7 +172,7 @@ export function BottomNav() {
             href={href}
             className={cn(
               'flex items-center gap-3 rounded-lg px-3 py-2 transition-all hover:text-primary',
-              isDestructive ? 'text-destructive hover:text-red-500' : 'text-muted-foreground',
+              isDestructive ? 'text-destructive hover:text-red-500' : 'text-foreground',
               pathname === href && !isDestructive && 'bg-muted text-primary',
               isCollapsed && 'justify-center'
             )}
