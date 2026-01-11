@@ -9,14 +9,14 @@ export function SalesChart() {
     <Card>
       <CardHeader>
         <CardTitle>Monthly Sales</CardTitle>
-        <CardDescription>A line chart showing sales over the last 7 months.</CardDescription>
+        <CardDescription>A line chart showing sales over the last 6 months.</CardDescription>
       </CardHeader>
       <CardContent>
         <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={salesData}>
+          <LineChart data={salesData.slice(0, 6)}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" stroke="hsl(var(--foreground))" fontSize={12} />
-            <YAxis stroke="hsl(var(--foreground))" fontSize={12} tickFormatter={(value) => `$${value}`} />
+            <YAxis stroke="hsl(var(--foreground))" fontSize={12} tickFormatter={(value) => `$${value/1000}k`} />
             <Tooltip
               contentStyle={{
                 backgroundColor: 'hsl(var(--background))',

@@ -9,11 +9,11 @@ export function GrowthChart() {
     <Card>
       <CardHeader>
         <CardTitle>User Growth</CardTitle>
-        <CardDescription>A bar chart showing user growth over the last 7 months.</CardDescription>
+        <CardDescription>A bar chart showing new users over the last 6 months.</CardDescription>
       </CardHeader>
       <CardContent>
         <ResponsiveContainer width="100%" height={300}>
-          <BarChart data={userGrowthData}>
+          <BarChart data={userGrowthData.slice(0, 6)}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" stroke="hsl(var(--foreground))" fontSize={12} />
             <YAxis stroke="hsl(var(--foreground))" fontSize={12} />

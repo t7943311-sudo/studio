@@ -1,9 +1,7 @@
-import { DollarSign, Users, CreditCard, Activity } from 'lucide-react';
+import { DollarSign, Users, CreditCard, Package } from 'lucide-react';
 import { StatCard } from './components/stat-card';
 import { SalesChart } from './components/sales-chart';
 import { GrowthChart } from './components/growth-chart';
-import { RecentSales } from './components/recent-sales';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function DashboardPage() {
   return (
@@ -16,7 +14,7 @@ export default function DashboardPage() {
           description="+20.1% from last month"
         />
         <StatCard
-          title="Subscriptions"
+          title="Users"
           value="+2350"
           icon={Users}
           description="+180.1% from last month"
@@ -28,18 +26,15 @@ export default function DashboardPage() {
           description="+19% from last month"
         />
         <StatCard
-          title="Active Now"
-          value="+573"
-          icon={Activity}
+          title="Orders"
+          value="573"
+          icon={Package}
           description="+201 since last hour"
         />
       </div>
       <div className="grid gap-6 lg:grid-cols-2">
          <SalesChart />
          <GrowthChart />
-      </div>
-      <div>
-        <RecentSales />
       </div>
     </div>
   );
