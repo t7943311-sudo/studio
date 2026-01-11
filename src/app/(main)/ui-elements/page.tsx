@@ -67,7 +67,7 @@ import { Slider } from "@/components/ui/slider"
 import { Switch } from "@/components/ui/switch"
 import { Textarea } from "@/components/ui/textarea"
 import { useToast } from "@/hooks/use-toast"
-import { Rocket, Info, TriangleAlert, CircleCheck } from "lucide-react"
+import { Rocket, Info, TriangleAlert } from "lucide-react"
 import React from "react"
 
 
@@ -84,7 +84,7 @@ export default function UIElementsPage() {
   return (
     <div className="flex flex-col gap-8">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">UI Elements</h1>
+        <h1 className="text-2xl font-semibold">UI Components</h1>
         <p className="text-muted-foreground">A showcase of the components available in this template.</p>
       </div>
 
