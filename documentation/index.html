@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaAdmin React - Documentation</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+            margin: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #4F46E5;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .header p {
+            margin: 5px 0 0;
+            font-size: 1.2em;
+        }
+        .section {
+            background-color: #fff;
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h2 {
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-top: 0;
+            color: #111827;
+        }
+        code {
+            background-color: #f3f4f6;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }
+        pre {
+            background-color: #1f2937;
+            color: #d1d5db;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        .credits {
+            text-align: center;
+            margin-top: 40px;
+            color: #6b7280;
+        }
+        .list {
+            padding-left: 20px;
+        }
+        .list li {
+            margin-bottom: 10px;
+        }
+        a {
+            color: #4F46E5;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>NovaAdmin React Template</h1>
+            <p>Your guide to getting started</p>
+        </div>
+
+        <div class="section">
+            <h2>Introduction</h2>
+            <p>Thank you for choosing NovaAdmin! This is a professional, frontend-only React admin dashboard template built with a modern technology stack. It's designed to be clean, customizable, and easy for developers of all skill levels to get started with.</p>
+            <p>This template is built with <strong>Next.js (App Router)</strong>, <strong>Tailwind CSS</strong>, and <strong>shadcn/ui</strong>, providing a powerful and efficient development experience.</p>
+        </div>
+
+        <div class="section">
+            <h2>Project Setup</h2>
+            <p>To get the project running on your local machine, please follow these simple steps. You will need <a href="https://nodejs.org/" target="_blank">Node.js</a> (v18 or newer) and npm installed.</p>
+            <ol class="list">
+                <li>
+                    <strong>Unzip the Package:</strong>
+                    <p>First, unzip the downloaded file from your purchase.</p>
+                </li>
+                <li>
+                    <strong>Open Terminal:</strong>
+                    <p>Navigate to the project's root folder (the one containing <code>package.json</code>) in your terminal or code editor.</p>
+                </li>
+                <li>
+                    <strong>Install Dependencies:</strong>
+                    <p>Run the following command to install all the required libraries for the project.</p>
+                    <pre><code>npm install</code></pre>
+                </li>
+                <li>
+                    <strong>Start the Development Server:</strong>
+                    <p>Once the installation is complete, start the local development server with this command.</p>
+                    <pre><code>npm run dev</code></pre>
+                </li>
+            </ol>
+            <p>Your browser should automatically open to <a href="http://localhost:9002" target="_blank">http://localhost:9002</a> with the application running. You are now ready to start customizing!</p>
+        </div>
+
+        <div class="section">
+            <h2>Folder Structure</h2>
+            <p>The project uses the standard Next.js App Router structure, which is organized for scalability and clarity. Here's an overview of the key folders:</p>
+            <pre><code>/src
+├── app/
+│   ├── (main)/             // Main layout for the dashboard pages
+│   │   ├── dashboard/
+│   │   ├── users/
+│   │   ├── ui-elements/      // Page showcasing all UI components
+│   │   └── ... (other pages)
+│   ├── login/              // Login page (has a separate, simpler layout)
+│   ├── layout.tsx          // Root layout of the entire application
+│   └── globals.css         // Global styles and theme color variables
+│
+├── components/
+│   ├── layout/             // Main layout components (Header, Sidebar, etc.)
+│   ├── ui/                 // Reusable UI components from shadcn/ui
+│   └── theme-provider.tsx  // Logic for switching between light/dark mode
+│
+├── contexts/
+│   └── sidebar-provider.tsx // State management for the collapsible sidebar
+│
+├── lib/
+│   ├── mock-data.ts        // All placeholder data for tables and charts
+│   └── utils.ts            // Utility functions
+│
+└── public/                 // Static assets like images (if any)
+</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>Customization</h2>
+            <ul class="list">
+                <li>
+                    <strong>Changing the Logo:</strong>
+                    <p>The logo is an SVG component located at <code>/src/components/logo.tsx</code>. You can edit this file to insert your own SVG code. Alternatively, you can modify its usage in <code>/src/app/(main)/layout.tsx</code> and <code>/src/components/layout/mobile-sidebar.tsx</code> to use an <code>&lt;Image&gt;</code> tag from <code>next/image</code> if you prefer using a PNG or JPG file placed in the <code>/public</code> folder.</p>
+                </li>
+                <li>
+                    <strong>Changing Colors & Theme:</strong>
+                    <p>All theme colors are defined as CSS variables in <code>/src/app/globals.css</code>. You can change the HSL values for primary color, background, text, etc., in the <code>:root</code> (for light mode) and <code>.dark</code> (for dark mode) selectors. This makes it easy to re-brand the entire template.</p>
+                    <pre><code>:root {
+    --primary: 243 75% 59%; /* This is the main theme color (#4F46E5) */
+    --background: 210 40% 98%;
+    /* ... other colors */
+}</code></pre>
+                </li>
+                <li>
+                    <strong>Adding a New Page:</strong>
+                    <p>To add a new page that uses the main dashboard layout (with sidebar and header):</p>
+                    <ol>
+                        <li>Create a new folder inside <code>/src/app/(main)/</code>. For example, <code>/src/app/(main)/mynewpage/</code>.</li>
+                        <li>Inside this new folder, create a file named <code>page.tsx</code>.</li>
+                        <li>Add your page content as a React component in this file. For example: <code>export default function MyNewPage() { return &lt;h1&gt;Hello World&lt;/h1&gt;; }</code>.</li>
+                        <li>Finally, add a link to your new page in the sidebar navigation file: <code>/src/components/layout/sidebar-nav.tsx</code>. Just add a new object to the <code>navItems</code> array.</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Routing</h2>
+            <p>This template uses the <strong>Next.js App Router</strong>. Routing is file-system based, which makes it intuitive.</p>
+            <ul class="list">
+                <li>A folder inside <code>/app</code> creates a new URL segment. For example, a file at <code>/app/users/page.tsx</code> corresponds to the <code>/users</code> URL.</li>
+                <li>The <code>(main)</code> folder is a "Route Group". It's a special Next.js feature that organizes files without affecting the URL. This allows all pages within it to share the main dashboard layout defined in <code>/app/(main)/layout.tsx</code>.</li>
+                <li>Pages like Login, Register, and 404 are outside the <code>(main)</code> group, so they have a different, simpler layout without the sidebar and header.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Credits</h2>
+            <p>This template is built with amazing open-source libraries. A huge thank you to their creators and maintainers!</p>
+            <ul class="list">
+                <li><a href="https://nextjs.org/" target="_blank">Next.js</a></li>
+                <li><a href="https://react.dev/" target="_blank">React</a></li>
+                <li><a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a></li>
+                <li><a href="https://ui.shadcn.com/" target="_blank">shadcn/ui</a></li>
+                <li><a href="https://recharts.org/" target="_blank">Recharts</a></li>
+                <li><a href="https://lucide.dev/" target="_blank">Lucide React</a> for icons</li>
+                <li><a href="https://fonts.google.com/specimen/Inter" target="_blank">Google Fonts (Inter)</a></li>
+            </ul>
+        </div>
+
+        <div class="credits">
+            <p>Once again, thank you for your purchase. We hope you love NovaAdmin!</p>
+        </div>
+    </div>
+</body>
+</html>

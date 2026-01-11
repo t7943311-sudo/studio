@@ -1,0 +1,7 @@
+v1.0.0 - (2024-07-31)
+- Initial release of NovaAdmin React Template.
+- Core features: Dashboard, User Management UI, Charts, Forms, Tables, Auth Pages.
+- Tech Stack: Next.js, Tailwind CSS, shadcn/ui, Recharts.
+- Light & Dark mode support.
+- Fully responsive design.
+- Comprehensive documentation for beginners.
